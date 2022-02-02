@@ -6,7 +6,7 @@ import ListItem from 'components/ListItem';
 import LoadingIndicator from 'components/LoadingIndicator';
 import RepoListItem from 'containers/RepoListItem';
 
-function ReposList({ loading, error, repos }) {
+function ReposList({ loading, error, strings }) {
   if (loading) {
     return <List component={LoadingIndicator} />;
   }
@@ -18,8 +18,12 @@ function ReposList({ loading, error, repos }) {
     return <List component={ErrorComponent} />;
   }
 
-  if (repos !== false) {
-    return <List items={repos} component={RepoListItem} />;
+  if (strings !== false) {
+    if (strings.strings.length === 0) {
+      const EmptyComponent = () => <ListItem item="The list is empty" />;
+      return <List component={EmptyComponent} />;
+    }
+    return <List items={strings.strings} component={RepoListItem} />;
   }
 
   return null;
@@ -28,7 +32,7 @@ function ReposList({ loading, error, repos }) {
 ReposList.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.any,
-  repos: PropTypes.any,
+  strings: PropTypes.any,
 };
 
 export default ReposList;
