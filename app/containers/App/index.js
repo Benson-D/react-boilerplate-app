@@ -12,6 +12,7 @@ import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
+import PostStringPage from 'containers/PostStringPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Footer from 'components/Footer';
 
@@ -37,6 +38,7 @@ export default function App() {
       </Helmet>
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/addStr" component={PostStringPage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Footer />

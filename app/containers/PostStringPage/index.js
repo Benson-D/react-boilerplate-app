@@ -18,12 +18,15 @@ import { makeSelectString, makeSubmitString, makeError } from './selectors';
 import Section from './Section';
 import CenteredSection from './CenteredSection';
 import Form from './Form';
-import Button from '../../components/Button';
+import Button from './Button';
+import BtnComponent from '../../components/Button';
+import H2 from '../../components/H2';
+import H3 from '../../components/H3';
 import Input from './Input';
 import reducer from './reducer';
 import saga from './saga';
 
-const key = 'PostString';
+const key = 'AddPage';
 
 export function PostString({
   string,
@@ -39,11 +42,11 @@ export function PostString({
     <Section>
       <CenteredSection>
         <Form onSubmit={onSubmitForm}>
-          <h2>New String Form</h2>
-          {error ? <h4>Something went wrong, please try again later</h4> : null}
-          {error === false && submit ? <h3>Added!</h3> : null}
+          <H2>Add A New String</H2>
+          {error && <h4>An error occurred, please try again later</h4>}
+          {submit && <H3>Added!</H3>}
           <label>
-            New String:
+            Name:
             <Input
               name="string"
               type="text"
@@ -55,11 +58,7 @@ export function PostString({
           <Button disabled={string === ''} color="teal" type="submit">
             Add
           </Button>
-          <a href="/">
-            <Button color="black" type="button">
-              Back
-            </Button>
-          </a>
+          <BtnComponent href="/">Back</BtnComponent>
         </Form>
       </CenteredSection>
     </Section>
