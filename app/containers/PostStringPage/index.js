@@ -38,6 +38,8 @@ export function PostString({
   useInjectReducer({ key, reducer });
   useInjectSaga({ key, saga });
 
+  const disableBtn = string.length === 0;
+
   return (
     <Section>
       <CenteredSection>
@@ -46,7 +48,7 @@ export function PostString({
           {error && <h4>An error occurred, please try again later</h4>}
           {submit && <H3>Added!</H3>}
           <label>
-            Name:
+            Name String:
             <Input
               name="string"
               type="text"
@@ -55,7 +57,7 @@ export function PostString({
               value={string}
             />
           </label>
-          <Button disabled={string === ''} color="teal" type="submit">
+          <Button disabled={disableBtn} color="teal" type="submit">
             Add
           </Button>
         </Form>
