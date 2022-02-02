@@ -20,7 +20,6 @@ import {
   makeSelectError,
 } from 'containers/App/selectors';
 import H2 from 'components/H2';
-// import A from 'components/A';
 import Button from 'components/Button';
 import ReposList from '../../components/StringList';
 

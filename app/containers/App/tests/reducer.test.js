@@ -1,7 +1,7 @@
 import produce from 'immer';
 
 import appReducer from '../reducer';
-import { loadRepos, reposLoaded, repoLoadingError } from '../actions';
+import { loadStrData, loadStrSuccess, loadStrError } from '../actions';
 
 /* eslint-disable default-case, no-param-reassign */
 describe('appReducer', () => {
@@ -10,10 +10,7 @@ describe('appReducer', () => {
     state = {
       loading: false,
       error: false,
-      currentUser: false,
-      userData: {
-        repositories: false,
-      },
+      strings: false,
     };
   });
 
@@ -22,35 +19,27 @@ describe('appReducer', () => {
     expect(appReducer(undefined, {})).toEqual(expectedResult);
   });
 
-  it('should handle the loadRepos action correctly', () => {
+  it('should handle the loadStrData action correctly', () => {
     const expectedResult = produce(state, draft => {
       draft.loading = true;
       draft.error = false;
-      draft.userData.repositories = false;
+      draft.strings = false;
     });
 
-    expect(appReducer(state, loadRepos())).toEqual(expectedResult);
+    expect(appReducer(state, loadStrData())).toEqual(expectedResult);
   });
 
-  it('should handle the reposLoaded action correctly', () => {
-    const fixture = [
-      {
-        name: 'My Repo',
-      },
-    ];
-    const username = 'test';
+  it('should handle the loadStrSuccess action correctly', () => {
+    const fixture = ['test1'];
     const expectedResult = produce(state, draft => {
-      draft.userData.repositories = fixture;
+      draft.strings = fixture;
       draft.loading = false;
-      draft.currentUser = username;
     });
 
-    expect(appReducer(state, reposLoaded(fixture, username))).toEqual(
-      expectedResult,
-    );
+    expect(appReducer(state, loadStrSuccess(fixture))).toEqual(expectedResult);
   });
 
-  it('should handle the repoLoadingError action correctly', () => {
+  it('should handle the loadStrError action correctly', () => {
     const fixture = {
       msg: 'Not found',
     };
@@ -59,8 +48,6 @@ describe('appReducer', () => {
       draft.loading = false;
     });
 
-    expect(appReducer(state, repoLoadingError(fixture))).toEqual(
-      expectedResult,
-    );
+    expect(appReducer(state, loadStrError(fixture))).toEqual(expectedResult);
   });
 });

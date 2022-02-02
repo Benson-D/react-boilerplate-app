@@ -1,6 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ReposList /> should render the loading indicator when its loading 1`] = `
+exports[`<StringList /> should render the data if loading was successful 1`] = `
+<div
+  class="Wrapper-sc-1umgotm-0 laCwDT"
+>
+  <ul
+    class="Ul-mwnq6h-0 jcxXFy"
+  >
+    <li
+      class="Wrapper-euo0oy-0 jLvxtc"
+    >
+      <div
+        class="Item-sc-3y9mie-0 fKXSkT"
+      >
+        <div
+          class="Wrapper-sc-4ooklm-0 kLriNu"
+        >
+           
+          test1
+           
+        </div>
+      </div>
+    </li>
+    <li
+      class="Wrapper-euo0oy-0 jLvxtc"
+    >
+      <div
+        class="Item-sc-3y9mie-0 fKXSkT"
+      >
+        <div
+          class="Wrapper-sc-4ooklm-0 kLriNu"
+        >
+           
+          test2
+           
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`<StringList /> should render the loading indicator when its loading 1`] = `
 <div
   class="Wrapper-sc-1umgotm-0 laCwDT"
 >
@@ -47,54 +88,6 @@ exports[`<ReposList /> should render the loading indicator when its loading 1`] 
         class="Circle__CirclePrimitive-ww56dy-0 fsGOmP"
       />
     </div>
-  </ul>
-</div>
-`;
-
-exports[`<ReposList /> should render the repositories if loading was successful 1`] = `
-<div
-  class="Wrapper-sc-1umgotm-0 laCwDT"
->
-  <ul
-    class="Ul-mwnq6h-0 jcxXFy"
-  >
-    <li
-      class="Wrapper-euo0oy-0 jLvxtc"
-    >
-      <div
-        class="Item-sc-3y9mie-0 fKXSkT"
-      >
-        <div
-          class="Wrapper-sc-17s0rao-0 dlZQhZ"
-        >
-          <a
-            class="A-br8h0y-0 RepoLink-pvpwpn-0 eEveIZ"
-            href="https://github.com/react-boilerplate/react-boilerplate"
-            target="_blank"
-          >
-            react-boilerplate
-          </a>
-          <a
-            class="A-br8h0y-0 IssueLink-uyzonb-0 kUUUnc"
-            href="https://github.com/react-boilerplate/react-boilerplate/issues"
-            target="_blank"
-          >
-            <svg
-              class="IssueIcon-s8m34y-0 jEBeEF"
-              height="1em"
-              width="0.875em"
-            >
-              <path
-                d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7S10.14 13.7 7 13.7 1.3 11.14 1.3 8s2.56-5.7 5.7-5.7m0-1.3C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7S10.86 1 7 1z m1 3H6v5h2V4z m0 6H6v2h2V10z"
-              />
-            </svg>
-            <span>
-              20
-            </span>
-          </a>
-        </div>
-      </div>
-    </li>
   </ul>
 </div>
 `;

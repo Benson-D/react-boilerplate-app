@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PostStringPage /> should render and match the snapshot 1`] = `
+<section
+  class="Section-sc-17tlwec-0 cWudhs"
+>
+  <section
+    class="Section-sc-17tlwec-0 CenteredSection-sc-1xw73o2-0 bJGDBq"
+  >
+    <form
+      class="Form-sc-1nfnwfo-0 iWKGnI"
+    >
+      <h2
+        class="H2-egphza-0 HsCXl"
+      >
+        Add a new string to the list!
+      </h2>
+      <label>
+        Name String:
+        <input
+          class="Input-sc-1k2aish-0 jXchye"
+          id="string"
+          name="string"
+          type="text"
+          value=""
+        />
+      </label>
+      <button
+        class="Button-sc-4daute-0 eYjxKg"
+        color="#006098"
+        disabled=""
+        type="submit"
+      >
+        Add
+      </button>
+    </form>
+    <div
+      class="Wrapper-sc-5dsnpv-0 jpYyqh"
+    >
+      <a
+        class="A-t53uvo-0 imPlZY"
+        href="/"
+      >
+        Back
+      </a>
+    </div>
+  </section>
+</section>
+`;

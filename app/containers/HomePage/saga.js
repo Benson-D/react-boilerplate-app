@@ -4,7 +4,7 @@
 
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { LOAD_STR_DATA } from 'containers/App/constants';
-import { reposLoaded, repoLoadingError } from 'containers/App/actions';
+import { loadStrSuccess, loadStrError } from 'containers/App/actions';
 
 import request from 'utils/request';
 
@@ -18,9 +18,9 @@ export function* getStringData() {
   try {
     // Call our request helper (see 'utils/request')
     const strings = yield call(request, baseUrl);
-    yield put(reposLoaded(strings));
+    yield put(loadStrSuccess(strings));
   } catch (err) {
-    yield put(repoLoadingError(err));
+    yield put(loadStrError(err));
   }
 }
 

@@ -13,7 +13,6 @@ exports[`<App /> should render and match the snapshot 1`] = `
       name="description"
     />
   </HelmetWrapper>
-  <Header />
   <Switch>
     <Route
       component={[Function]}
@@ -22,7 +21,8 @@ exports[`<App /> should render and match the snapshot 1`] = `
     />
     <Route
       component={[Function]}
-      path="/features"
+      exact={true}
+      path="/addStr"
     />
     <Route
       component={[Function]}

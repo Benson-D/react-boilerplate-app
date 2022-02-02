@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import { getByText, render } from 'react-testing-library';
+import { render } from 'react-testing-library';
 import { IntlProvider } from 'react-intl';
 
 import StringListItem from '../index';
@@ -26,34 +26,5 @@ describe('<StringListItem />', () => {
   it('should render data', () => {
     const { container } = renderComponent({ item });
     expect(container.firstChild).toMatchSnapshot();
-  });
-
-  it('should render usernames that are not the current one', () => {
-    const { container } = renderComponent({
-      item,
-      currentUser: 'nikgraf',
-    });
-    expect(
-      getByText(container, content => content.startsWith(item.owner.login)),
-    ).not.toBeNull();
-  });
-
-  it('should render the repo name', () => {
-    const { container } = renderComponent({ item });
-    expect(
-      getByText(container, content => content.endsWith(item.name)),
-    ).not.toBeNull();
-  });
-
-  it('should render the issue count', () => {
-    const { container } = renderComponent({ item });
-    expect(
-      getByText(container, item.open_issues_count.toString(10)),
-    ).not.toBeNull();
-  });
-
-  it('should render the IssueIcon', () => {
-    const { container } = renderComponent({ item });
-    expect(container.querySelector('svg')).not.toBeNull();
   });
 });

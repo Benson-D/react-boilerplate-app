@@ -31,10 +31,10 @@ export function loadStrData() {
 /**
  * Dispatched when the repositories are loaded by the request saga
  *
- * @param  {object} strings The repository data
+ * @param  {object} strings The string data
  * @return {object} An action object with a type of LOAD_STRINGS_SUCCESS passing the strings
  */
-export function reposLoaded(strings) {
+export function loadStrSuccess(strings) {
   return {
     type: LOAD_STR_SUCCESS,
     strings,
@@ -42,13 +42,13 @@ export function reposLoaded(strings) {
 }
 
 /**
- * Dispatched when loading the repositories fails
+ * Dispatched when loading the string data fails
  *
  * @param  {object} error The error
  *
- * @return {object}       An action object with a type of LOAD_STR_ERROR passing the error
+ * @return {object} An action object with a type of LOAD_STR_ERROR passing the error
  */
-export function repoLoadingError(error) {
+export function loadStrError(error) {
   return {
     type: LOAD_STR_ERROR,
     error,

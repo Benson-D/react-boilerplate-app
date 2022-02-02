@@ -38,13 +38,14 @@ export function PostString({
   useInjectSaga({ key, saga });
 
   const disableBtn = string.length === 0;
+  const errMessage = 'An error occurred, please try again later';
 
   return (
     <Section>
       <CenteredSection>
         <Form onSubmit={onSubmitForm}>
-          <H2>Add A New String</H2>
-          {error && <h4>An error occurred, please try again later</h4>}
+          <H2>Add a new string to the list!</H2>
+          {error && <h4>{errMessage}</h4>}
           {submit && <H3>Added!</H3>}
           <label>
             Name String:
@@ -56,7 +57,7 @@ export function PostString({
               value={string}
             />
           </label>
-          <Button disabled={disableBtn} color="teal" type="submit">
+          <Button disabled={disableBtn} color="#006098" type="submit">
             Add
           </Button>
         </Form>

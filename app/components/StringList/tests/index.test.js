@@ -29,7 +29,7 @@ describe('<StringList />', () => {
     const { container } = render(
       <Provider store={store}>
         <IntlProvider locale="en">
-          <StringList repos={testData} error={false} />
+          <StringList strings={testData} error={false} />
         </IntlProvider>
       </Provider>,
     );
@@ -39,7 +39,7 @@ describe('<StringList />', () => {
 
   it('should not render anything if nothing interesting is provided', () => {
     const { container } = render(
-      <StringList repos={false} error={false} loading={false} />,
+      <StringList strings={false} error={false} loading={false} />,
     );
 
     expect(container.firstChild).toBeNull();

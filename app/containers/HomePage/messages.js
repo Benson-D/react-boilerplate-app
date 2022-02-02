@@ -12,16 +12,4 @@ export default defineMessages({
     id: `${scope}.start_project.header`,
     defaultMessage: 'Add a string with a react project in seconds!',
   },
-  trymeHeader: {
-    id: `${scope}.tryme.header`,
-    defaultMessage: 'Try me!',
-  },
-  trymeMessage: {
-    id: `${scope}.tryme.message`,
-    defaultMessage: 'Show Github repositories by',
-  },
-  trymeAtPrefix: {
-    id: `${scope}.tryme.atPrefix`,
-    defaultMessage: '@',
-  },
 });

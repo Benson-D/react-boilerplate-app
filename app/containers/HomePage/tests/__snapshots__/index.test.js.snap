@@ -10,56 +10,39 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
         class="H2-egphza-0 HsCXl"
       >
         <span>
-          Start your next react project in seconds
+          Add a string with a react project in seconds!
         </span>
       </h2>
-      <p>
-        <span>
-          A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices
-        </span>
-      </p>
     </section>
     <section
       class="Section-sc-1eulrsm-0 eTEsZl"
     >
-      <h2
-        class="H2-egphza-0 HsCXl"
+      <div
+        class="Wrapper-sc-5dsnpv-0 jpYyqh"
       >
-        <span>
-          Try me!
-        </span>
-      </h2>
-      <form
-        class="Form-dmhz4x-0 ZClLh"
-      >
-        <label
-          for="username"
+        <a
+          class="A-t53uvo-0 imPlZY"
+          href="/addStr"
         >
-          <span>
-            Show Github repositories by
-          </span>
-          <span
-            class="AtPrefix-sc-1suuq8o-0 fvrDQr"
-          >
-            <span>
-              @
-            </span>
-          </span>
-          <input
-            class="Input-sc-19rkjmi-0 gyJaEd"
-            id="username"
-            placeholder="mxstbr"
-            type="text"
-            value=""
-          />
-        </label>
-      </form>
+          Add a String
+        </a>
+      </div>
       <div
         class="Wrapper-sc-1umgotm-0 laCwDT"
       >
         <ul
           class="Ul-mwnq6h-0 jcxXFy"
-        />
+        >
+          <li
+            class="Wrapper-euo0oy-0 jLvxtc"
+          >
+            <div
+              class="Item-sc-3y9mie-0 fKXSkT"
+            >
+              Something went wrong, please try again!
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
   </div>

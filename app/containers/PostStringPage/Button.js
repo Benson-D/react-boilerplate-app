@@ -14,8 +14,10 @@ const Button = styled.button(props => ({
   'font-weight': 'bold',
   'font-size': '16px',
 
-  '&:hover': {
-    'background-color': 'green',
+  '&:active': {
+    'background-color': '#43cc7a',
+    border: '2px solid #43cc7a',
+    transform: 'translateY(2px)',
   },
 }));
 

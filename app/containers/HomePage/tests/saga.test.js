@@ -5,7 +5,7 @@
 import { put, takeLatest } from 'redux-saga/effects';
 
 import { LOAD_STR_DATA } from 'containers/App/constants';
-import { reposLoaded, repoLoadingError } from 'containers/App/actions';
+import { loadStrSuccess, loadStrError } from 'containers/App/actions';
 
 import serverData, { getStringData } from '../saga';
 
@@ -22,16 +22,16 @@ describe('getStringData Saga', () => {
     expect(callDescriptor).toMatchSnapshot();
   });
 
-  it('should dispatch the reposLoaded action if it requests the data successfully', () => {
+  it('should dispatch the loadStrSuccess action if it requests the data successfully', () => {
     const response = ['test1', 'test2'];
     const putDescriptor = getStringGenerator.next(response).value;
-    expect(putDescriptor).toEqual(put(reposLoaded(response)));
+    expect(putDescriptor).toEqual(put(loadStrSuccess(response)));
   });
 
-  it('should call the repoLoadingError action if the response errors', () => {
+  it('should call the loadStrError action if the response errors', () => {
     const response = new Error('Some error');
     const putDescriptor = getStringGenerator.throw(response).value;
-    expect(putDescriptor).toEqual(put(repoLoadingError(response)));
+    expect(putDescriptor).toEqual(put(loadStrError(response)));
   });
 });
 
