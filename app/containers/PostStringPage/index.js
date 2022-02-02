@@ -58,8 +58,8 @@ export function PostString({
           <Button disabled={string === ''} color="teal" type="submit">
             Add
           </Button>
-          <BtnComponent href="/">Back</BtnComponent>
         </Form>
+        <BtnComponent href="/">Back</BtnComponent>
       </CenteredSection>
     </Section>
   );

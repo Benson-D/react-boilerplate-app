@@ -8,7 +8,7 @@ const Button = styled.button(props => ({
   'border-radius': '4px',
   '-webkit-font-smoothing': 'antialiased',
   '-webkit-touch-callout': 'none',
-  border: '2px solid teal',
+  border: `2px solid ${props.color}`,
   color: 'white',
   margin: '0.25em',
   cursor: 'pointer',
