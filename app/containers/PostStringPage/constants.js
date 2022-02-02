@@ -2,6 +2,6 @@
  * Post String Constants
  */
 
-export const CHANGE_STRING = 'boilerplate/PostStringPage/CHANGE_STRING';
-export const SUBMIT_STRING = 'boilerplate/PostStringPage/SUBMIT_STRING';
-export const SUBMIT_ERROR = 'boilerplate/PostStringPage/SUBMIT_ERROR';
+export const ADD_STR_CHANGE = 'boilerplate/PostStringPage/ADD_STR_CHANGE';
+export const ADD_STR_SUBMIT = 'boilerplate/PostStringPage/ADD_STR_SUBMIT';
+export const ADD_STR_ERROR = 'boilerplate/PostStringPage/ADD_STR_ERROR';

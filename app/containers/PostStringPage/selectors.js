@@ -5,24 +5,24 @@
 import { createSelector } from 'reselect';
 import { initialState } from './reducer';
 
-const selectAdd = state => state.AddPage || initialState;
+const selectAdd = state => state.PostString || initialState;
 
 const makeSelectString = () =>
   createSelector(
     selectAdd,
-    addPageState => addPageState.string,
+    postStringState => postStringState.string,
   );
 
 const makeSubmitString = () =>
   createSelector(
     selectAdd,
-    addPageState => addPageState.submit,
+    postStringState => postStringState.submit,
   );
 
 const makeError = () =>
   createSelector(
     selectAdd,
-    addPageState => addPageState.error,
+    postStringState => postStringState.error,
   );
 
 export { selectAdd, makeSelectString, makeSubmitString, makeError };

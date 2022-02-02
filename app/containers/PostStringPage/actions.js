@@ -3,46 +3,46 @@
  *
  */
 
-import { CHANGE_STRING, SUBMIT_STRING, SUBMIT_ERROR } from './constants';
+import { ADD_STR_CHANGE, ADD_STR_SUBMIT, ADD_STR_ERROR } from './constants';
 
 /**
- * Changes the input field of the form
+ * Takes in the input field of the form
  *
  * @param  {string} string The new text of the input field
  *
- * @return {object} An action object with a type of CHANGE_STRING
+ * @return {object} An action object with a type of ADD_STR_CHANGE
  */
 export function changeString(string) {
   return {
-    type: CHANGE_STRING,
+    type: ADD_STR_CHANGE,
     string,
   };
 }
 
 /**
- * Changes status of the form
+ * Updates the status of the form
  *
  * @param  {string} submit The final version of the input field
  *
- * @return {object} An action object with a type of SUBMIT_STRING
+ * @return {object} An action object with a type of ADD_STR_SUBMIT
  */
 export function submitString(submit) {
   return {
-    type: SUBMIT_STRING,
+    type: ADD_STR_SUBMIT,
     submit,
   };
 }
 
 /**
- * Dispatched when posting fails
+ * Dispatched when posting faces an error
  *
  * @param  {object} error The error
  *
- * @return {object} An action object with a type of SUBMIT_ERROR passing the error
+ * @return {object} An action object with a type of ADD_STR_ERROR passing the error
  */
 export function submitError(error) {
   return {
-    type: SUBMIT_ERROR,
+    type: ADD_STR_ERROR,
     error,
   };
 }

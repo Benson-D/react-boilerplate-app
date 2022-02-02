@@ -1,7 +1,7 @@
 import request from 'utils/request';
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { submitError } from './actions';
-import { SUBMIT_STRING } from './constants';
+import { ADD_STR_SUBMIT } from './constants';
 
 /**
  * Server string request/response handler
@@ -28,6 +28,6 @@ export function* postString(string) {
  * Root saga manages watcher lifecycle
  */
 export default function* serverData() {
-  // Watches for SUBMIT_STRING actions and calls postStrings when one comes in.
-  yield takeLatest(SUBMIT_STRING, postString);
+  // Watches for ADD_STR_SUBMIT actions and calls postStrings when one comes in.
+  yield takeLatest(ADD_STR_SUBMIT, postString);
 }

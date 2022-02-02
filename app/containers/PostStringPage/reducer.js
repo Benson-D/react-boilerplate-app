@@ -1,12 +1,11 @@
 /*
- * addPageReducer
+ * postStringReducer
  *
  */
 
 import produce from 'immer';
-import { CHANGE_STRING, SUBMIT_ERROR, SUBMIT_STRING } from './constants';
+import { ADD_STR_CHANGE, ADD_STR_ERROR, ADD_STR_SUBMIT } from './constants';
 
-// The initial state
 export const initialState = {
   string: '',
   submit: false,
@@ -14,18 +13,18 @@ export const initialState = {
 };
 
 /* eslint-disable default-case, no-param-reassign */
-const addPageReducer = (state = initialState, action) =>
+const postStringReducer = (state = initialState, action) =>
   produce(state, draft => {
     switch (action.type) {
-      case CHANGE_STRING:
+      case ADD_STR_CHANGE:
         draft.string = action.string;
         break;
-      case SUBMIT_STRING:
+      case ADD_STR_SUBMIT:
         draft.submit = action.submit;
         break;
-      case SUBMIT_ERROR:
+      case ADD_STR_ERROR:
         draft.error = action.error;
     }
   });
 
-export default addPageReducer;
+export default postStringReducer;

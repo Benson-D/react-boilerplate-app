@@ -1,8 +1,7 @@
 /*
- * AddPage
+ * PostString index section
  *
- * This is the page to add a new string
- *
+ * Displays form to post a new string
  */
 
 import React, { memo } from 'react';
@@ -26,7 +25,7 @@ import Input from './Input';
 import reducer from './reducer';
 import saga from './saga';
 
-const key = 'AddPage';
+const key = 'PostString';
 
 export function PostString({
   string,
