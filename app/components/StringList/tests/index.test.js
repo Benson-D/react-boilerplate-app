@@ -23,10 +23,7 @@ describe('<StringList />', () => {
   });
 
   it('should render the data if loading was successful', () => {
-    const store = configureStore(
-      { global: { currentUser: 'mxstbr' } },
-      browserHistory,
-    );
+    const store = configureStore({}, browserHistory);
     const testData = { strings: ['test1', 'test2'] };
 
     const { container } = render(

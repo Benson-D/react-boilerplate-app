@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import List from 'components/List';
 import ListItem from 'components/ListItem';
 import LoadingIndicator from 'components/LoadingIndicator';
-import RepoListItem from 'containers/RepoListItem';
+import StringListItem from 'containers/StringListItem';
 
-function ReposList({ loading, error, strings }) {
+function StringList({ loading, error, strings }) {
   if (loading) {
     return <List component={LoadingIndicator} />;
   }
@@ -23,16 +23,16 @@ function ReposList({ loading, error, strings }) {
       const EmptyComponent = () => <ListItem item="The list is empty" />;
       return <List component={EmptyComponent} />;
     }
-    return <List items={strings.strings} component={RepoListItem} />;
+    return <List items={strings.strings} component={StringListItem} />;
   }
 
   return null;
 }
 
-ReposList.propTypes = {
+StringList.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.any,
   strings: PropTypes.any,
 };
 
-export default ReposList;
+export default StringList;

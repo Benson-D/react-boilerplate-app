@@ -15,7 +15,7 @@ import ListItem from 'components/ListItem';
 // import IssueIcon from './IssueIcon';
 import Wrapper from './Wrapper';
 
-export default function RepoListItem(props) {
+export default function StringListItem(props) {
   const { item } = props;
 
   // If the repository is owned by a different person than we got the data for
@@ -31,6 +31,6 @@ export default function RepoListItem(props) {
   return <ListItem key={item} item={content} />;
 }
 
-RepoListItem.propTypes = {
+StringListItem.propTypes = {
   item: PropTypes.string,
 };

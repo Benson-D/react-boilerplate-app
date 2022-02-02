@@ -6,42 +6,26 @@ import React from 'react';
 import { getByText, render } from 'react-testing-library';
 import { IntlProvider } from 'react-intl';
 
-import { RepoListItem } from '../index';
+import StringListItem from '../index';
 
 const renderComponent = (props = {}) =>
   render(
     <IntlProvider locale="en">
-      <RepoListItem {...props} />
+      <StringListItem {...props} />
     </IntlProvider>,
   );
 
-describe('<RepoListItem />', () => {
+describe('<StringListItem />', () => {
   let item;
 
   // Before each test reset the item data for safety
   beforeEach(() => {
-    item = {
-      owner: {
-        login: 'mxstbr',
-      },
-      html_url: 'https://github.com/react-boilerplate/react-boilerplate',
-      name: 'react-boilerplate',
-      open_issues_count: 20,
-      full_name: 'react-boilerplate/react-boilerplate',
-    };
+    item = 'DMI-test';
   });
 
-  it('should render a ListItem', () => {
+  it('should render data', () => {
     const { container } = renderComponent({ item });
     expect(container.firstChild).toMatchSnapshot();
-  });
-
-  it('should not render the current username', () => {
-    const { queryByText } = renderComponent({
-      item,
-      currentUser: item.owner.login,
-    });
-    expect(queryByText(item.owner.login)).toBeNull();
   });
 
   it('should render usernames that are not the current one', () => {
