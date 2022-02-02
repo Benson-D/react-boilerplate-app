@@ -4,54 +4,44 @@
 
 import { put, takeLatest } from 'redux-saga/effects';
 
-import { LOAD_REPOS } from 'containers/App/constants';
+import { LOAD_STR_DATA } from 'containers/App/constants';
 import { reposLoaded, repoLoadingError } from 'containers/App/actions';
 
-import githubData, { getRepos } from '../saga';
-
-const username = 'mxstbr';
+import serverData, { getStringData } from '../saga';
 
 /* eslint-disable redux-saga/yield-effects */
-describe('getRepos Saga', () => {
-  let getReposGenerator;
+describe('getStringData Saga', () => {
+  let getStringGenerator;
 
   // We have to test twice, once for a successful load and once for an unsuccessful one
   // so we do all the stuff that happens beforehand automatically in the beforeEach
   beforeEach(() => {
-    getReposGenerator = getRepos();
+    getStringGenerator = getStringData();
 
-    const selectDescriptor = getReposGenerator.next().value;
-    expect(selectDescriptor).toMatchSnapshot();
-
-    const callDescriptor = getReposGenerator.next(username).value;
+    const callDescriptor = getStringGenerator.next().value;
     expect(callDescriptor).toMatchSnapshot();
   });
 
   it('should dispatch the reposLoaded action if it requests the data successfully', () => {
-    const response = [
-      {
-        name: 'First repo',
-      },
-      {
-        name: 'Second repo',
-      },
-    ];
-    const putDescriptor = getReposGenerator.next(response).value;
-    expect(putDescriptor).toEqual(put(reposLoaded(response, username)));
+    const response = ['test1', 'test2'];
+    const putDescriptor = getStringGenerator.next(response).value;
+    expect(putDescriptor).toEqual(put(reposLoaded(response)));
   });
 
   it('should call the repoLoadingError action if the response errors', () => {
     const response = new Error('Some error');
-    const putDescriptor = getReposGenerator.throw(response).value;
+    const putDescriptor = getStringGenerator.throw(response).value;
     expect(putDescriptor).toEqual(put(repoLoadingError(response)));
   });
 });
 
-describe('githubDataSaga Saga', () => {
-  const githubDataSaga = githubData();
+describe('server Saga', () => {
+  const serverApiDataSaga = serverData();
 
-  it('should start task to watch for LOAD_REPOS action', () => {
-    const takeLatestDescriptor = githubDataSaga.next().value;
-    expect(takeLatestDescriptor).toEqual(takeLatest(LOAD_REPOS, getRepos));
+  it('should start task to watch for LOAD_STR_DATA action', () => {
+    const takeLatestDescriptor = serverApiDataSaga.next().value;
+    expect(takeLatestDescriptor).toEqual(
+      takeLatest(LOAD_STR_DATA, getStringData),
+    );
   });
 });
