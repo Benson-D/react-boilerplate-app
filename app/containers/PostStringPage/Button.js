@@ -11,7 +11,6 @@ const Button = styled.button(props => ({
   border: `2px solid ${props.color}`,
   color: 'white',
   margin: '0.25em',
-  cursor: 'pointer',
   'font-weight': 'bold',
   'font-size': '16px',
 

@@ -1,5 +1,5 @@
 /*
- * AddPage Actions
+ * PostStringPage Actions
  *
  */
 
