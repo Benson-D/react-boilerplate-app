@@ -12,12 +12,12 @@ const ngrok =
     ? require('ngrok')
     : false;
 const { resolve } = require('path');
-
+const { NotFoundError } = require('./error');
 const strRoutes = require('./routes/strRoutes');
 
 const app = express();
 
-// ############################## Backend #############################//
+// ############################## Backend #########################
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
 // app.use('/api', myApi);
 app.use(express.json());
@@ -41,6 +41,10 @@ app.get('*.js', (req, res, next) => {
   res.set('Content-Encoding', 'gzip');
   next();
 });
+
+// ########################### ERRORS #########################
+/** Handle 404 errors -- this matches everything */
+app.use((req, res, next) => next(new NotFoundError()));
 
 // Start your app.
 app.listen(port, host, async err => {
