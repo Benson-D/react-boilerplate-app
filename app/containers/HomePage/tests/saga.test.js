@@ -7,7 +7,7 @@ import { put, takeLatest } from 'redux-saga/effects';
 import { LOAD_STR_DATA } from 'containers/App/constants';
 import { loadStrSuccess, loadStrError } from 'containers/App/actions';
 
-import serverData, { getStringData } from '../saga';
+import serverStrData, { getStringData } from '../saga';
 
 /* eslint-disable redux-saga/yield-effects */
 describe('getStringData Saga', () => {
@@ -36,7 +36,7 @@ describe('getStringData Saga', () => {
 });
 
 describe('server Saga', () => {
-  const serverApiDataSaga = serverData();
+  const serverApiDataSaga = serverStrData();
 
   it('should start task to watch for LOAD_STR_DATA action', () => {
     const takeLatestDescriptor = serverApiDataSaga.next().value;

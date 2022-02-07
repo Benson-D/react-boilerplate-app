@@ -7,7 +7,7 @@ import { ADD_STR_SUBMIT } from './constants';
  * Server string request/response handler
  */
 export function* postString(string) {
-  const requestURL = `http://localhost:3001/strContainer`;
+  const requestURL = `http://localhost:3000/strContainer`;
 
   try {
     // Call our request helper (see 'utils/request')
@@ -27,7 +27,7 @@ export function* postString(string) {
 /**
  * Root saga manages watcher lifecycle
  */
-export default function* serverData() {
+export default function* serverStrData() {
   // Watches for ADD_STR_SUBMIT actions and calls postStrings when one comes in.
   yield takeLatest(ADD_STR_SUBMIT, postString);
 }

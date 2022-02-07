@@ -13,7 +13,7 @@ import request from 'utils/request';
  */
 export function* getStringData() {
   // Select username from store
-  const baseUrl = `http://localhost:3001/strContainer`;
+  const baseUrl = `http://localhost:3000/strContainer`;
 
   try {
     // Call our request helper (see 'utils/request')
@@ -27,7 +27,7 @@ export function* getStringData() {
 /**
  * Root saga manages watcher lifecycle
  */
-export default function* serverData() {
+export default function* serverStrData() {
   // Watches for LOAD_STR_DATA actions and calls getRepos when one comes in.
   // By using `takeLatest` only the result of the latest API call is applied.
   // It returns task descriptor (just like fork) so we can continue execution

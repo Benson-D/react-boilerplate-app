@@ -18,7 +18,7 @@
 import { LOAD_STR_DATA, LOAD_STR_SUCCESS, LOAD_STR_ERROR } from './constants';
 
 /**
- * Load the repositories, this action starts the request saga
+ * Load the string list, this action starts the request saga
  *
  * @return {object} An action object with a type of LOAD_STR_DATA
  */
@@ -29,7 +29,7 @@ export function loadStrData() {
 }
 
 /**
- * Dispatched when the repositories are loaded by the request saga
+ * Dispatched when the strings are loaded by the request saga
  *
  * @param  {object} strings The string data
  * @return {object} An action object with a type of LOAD_STRINGS_SUCCESS passing the strings
