@@ -28,7 +28,3 @@
 ## Test 
 1. `npm test` to run all test
 2. `npm test -- <FILENAME>` to run a specific file for test
-## License
-
-This project is licensed under the MIT license, Copyright (c) 2019 Maximilian
-Stoiber. For more information see `LICENSE.md`.
