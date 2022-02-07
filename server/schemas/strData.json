@@ -1,0 +1,12 @@
+{
+    "$schema": "http://json-schema.org/draft-01/schema#",
+    "$id": "http://dmiAssessment/strContainer.schema.json",
+    "type": "object",
+    "properties": {
+        "string": {"type": "string"}
+    },
+    "additionalProperties": false,
+    "required": [
+        "string"
+    ]
+}
